@@ -1,0 +1,96 @@
+# Azure Development Tools Installation Script for macOS (Using Homebrew)
+
+This document provides a shell script to install essential Azure development tools on macOS using Homebrew. The script installs the Azure CLI, Azure Developer CLI (`azd`), Azure Functions Core Tools, and other common development dependencies.
+
+## Prerequisites
+
+- Ensure you have **Homebrew** installed. If not, install it using:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+
+## Installation Script
+
+Save the following script to a file (e.g., `install_azure_tools.sh`), make it executable, and run it.
+
+#!/bin/bash
+Update Homebrew
+echo "Updating Homebrew..."
+brew update
+Install Azure CLI
+echo "Installing Azure CLI..."
+brew install azure-cli
+Install Azure Developer CLI (azd)
+echo "Installing Azure Developer CLI (azd)..."
+brew tap azure/azd
+brew install azd
+Install Azure Functions Core Tools
+echo "Installing Azure Functions Core Tools..."
+brew tap azure/functions
+brew install azure-functions-core-tools@4
+Install Node.js (LTS version)
+echo "Installing Node.js..."
+brew install node
+Install Python (latest version)
+echo "Installing Python..."
+brew install python
+Install .NET SDK (latest version)
+echo "Installing .NET SDK..."
+brew install --cask dotnet-sdk
+Install Docker Desktop
+echo "Installing Docker Desktop..."
+brew install --cask docker
+Verify installations
+echo "Verifying installations..."
+az version
+azd version
+func --version
+node --version
+python3 --version
+dotnet --version
+docker --version
+echo "All tools have been installed successfully!"
+text
+
+## How to Use the Script
+
+1. **Save the script** to a file named `install_azure_tools.sh`:
+nano install_azure_tools.sh
+text
+Paste the script into the file and save it.
+
+2. **Make the script executable**:
+chmod +x install_azure_tools.sh
+text
+
+3. **Run the script**:
+./install_azure_tools.sh
+text
+
+## What This Script Installs
+
+| Tool                     | Purpose                                      |
+|--------------------------|----------------------------------------------|
+| **Azure CLI**            | Command-line interface for managing Azure resources. |
+| **Azure Developer CLI**  | Simplifies provisioning and deploying applications on Azure. |
+| **Azure Functions Core Tools** | Develop and test Azure Functions locally. |
+| **Node.js**              | JavaScript runtime for web and server-side development. |
+| **Python**               | Programming language for Python-based projects. |
+| **.NET SDK**             | Framework for .NET application development. |
+| **Docker Desktop**       | Containerized application management and development. |
+
+## Notes
+
+- Restart your terminal or system after installation if required.
+- Modify the script if you need specific versions of any tools or additional dependencies.
+- To verify Homebrew installation, run:
+brew --version
+text
+
+This setup provides a comprehensive environment for developing with Azure on macOS!
+
+Related
+How do I write my first Markdown document
+What are the basic syntax rules in Markdown
+How can I format headings in Markdown
+What are the best practices for writing Markdown documents
+How do I create links in Markdown
